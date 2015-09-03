@@ -1,0 +1,5 @@
+name = Boulder Basic
+description = Build flexible pages as fast as lightning.
+core = 7.x
+package = Boulder
+project = boulder_basic

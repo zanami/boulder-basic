@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Installation routines for Assemble module
+ */
+
+/**
+ * Implements hook_install().
+ */
+function boulder_basic_install() {
+  // Enable Lightning Roles
+  module_enable(array('lightning_roles'));
+}
+
+/**
+ * Implements hook_enable().
+ */
+function boulder_basic_enable() {
+  // List optional submodules to be enabled.
+  $submodules = array(
+    'lightning_admin',
+    'lightning_blocks',
+    'lightning_featured',
+    'lightning_forms',
+// these 2 go together
+//    'lightning_identifiers',
+//    'lightning_landing',
+    'lightning_metatags',
+// panels
+//    'lightning_fpp',
+//    'lightning_panels',
+    'lightning_views',
+// content
+    'lightning_article',
+    'lightning_base',
+    'lightning_content',
+    'lightning_edit',
+    'lightning_files',
+    'lightning_filter',
+    'lightning_image',
+    'lightning_media',
+//    'lightning_moderation',
+    'lightning_page',
+//    'lightning_rules',
+    'lightning_shortcuts',
+// depends on https://www.drupal.org/project/collections
+//    'lightning_sps',
+    'lightning_tags',
+    'lightning_token',
+    'lightning_theme',
+    'lightning_wysiwyg',
+  );
+  //Enable the optional submodules.
+  module_enable($submodules, TRUE);
+}
+
